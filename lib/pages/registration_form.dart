@@ -44,29 +44,49 @@ class _RegistrationFormState extends State<RegistrationForm> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(36.0, 65.0, 36.0, 0),
+          padding: const EdgeInsets.fromLTRB(36.0, 30, 36.0, 36),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Logo
-                Image(
-                  image: AssetImage('assets/images/logo_signup.png'),
-                  width: 55.0,
-                  height: 55.0,
-                ),
-                SizedBox(
-                  height: 56.0,
-                ),
+                ///Logo
+                ///
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                  SizedBox(),
+                  IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: Icon(
+                          Icons.cancel,
+                          color: Colors.red[600],
+                        )),
+                ],),
+                    
+                    Image(
+                      image: AssetImage('assets/images/logo_signup.png'),
+                      width: 55.0,
+                      height: 55.0,
+                    ),
+                    SizedBox(
+                      height: 56.0,
+                    ),
+                
 
-                //Title
-                Center(
-                  child: Text('Đăng ký tài khoản',
-                      style: TextStyle(
-                          color: theme(context).primaryColor,
-                          fontFamily: 'RobotoBold',
-                          fontSize: 33.0)),
+                ///Title
+                ///
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0,20,0,0),
+                  child: Center(
+                    child: Text('Đăng ký tài khoản',
+                        style: TextStyle(
+                            color: theme(context).primaryColor,
+                            fontFamily: 'RobotoBold',
+                            fontSize: 33.0)),
+                  ),
                 ),
 
                 //Username
